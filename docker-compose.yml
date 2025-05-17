@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./heart-disease-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./heart-disease-backend:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    command: >
+      sh -c "npm install --force --legacy-peer-deps && npm start"

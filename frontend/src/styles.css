@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+  background: #111;
+  color: white;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Home Page - Fullscreen Parallax Effect */
+.home-container {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+/* Title Styling */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00d4ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  text-shadow: 0px 0px 10px rgba(0, 212, 255, 0.7);
+}
+
+/* Model Selection Scrollable Carousel */
+.model-carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding: 20px;
+  width: 90vw;
+  max-width: 100%;
+  margin: 0 auto;
+  scrollbar-width: thin; 
+  scroll-behavior: smooth;
+}
+
+.model-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.model-carousel::-webkit-scrollbar-thumb {
+  background: #00d4ff;
+  border-radius: 5px;
+}
+
+.model-card {
+  background: linear-gradient(135deg, #1a1a1a, #292929);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 212, 255, 0.2);
+  width: 350px;
+  text-align: center;
+  scroll-snap-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.model-card h2 {
+  font-size: 1.8rem;
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.model-card p {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 10px;
+  height: 60px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.active-btn {
+  background: #00d4ff;
+  color: black;
+  box-shadow: 0px 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.active-btn:hover {
+  background: #0088cc;
+  color: white;
+}
+
+.disabled-btn {
+  background: #333;
+  color: #888;
+  cursor: not-allowed;
+}
+
+/* Predict Page - Layout */
+.predict-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Form Section */
+.form-container {
+  flex: 2;
+  padding: 20px;
+  background: #1e1e1e;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 212, 255, 0.2);
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #ddd;
+}
+
+input,
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  background: #444;
+}
+
+/* Sliders */
+input[type="range"] {
+  width: 100%;
+}
+
+/* Radio Buttons */
+.radio-group {
+  display: flex;
+  justify-content: space-around;
+}
+
+.radio-group label {
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.radio-group input {
+  display: none;
+}
+
+.radio-group label.active {
+  background: #00d4ff;
+  color: black;
+}
+
+/* Prediction Result Box (Right Side) */
+.prediction-box {
+  flex: 1;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  position: sticky;
+  top: 20px;
+  transition: all 0.3s ease;
+}
+
+.result-positive {
+  background: rgba(0, 255, 0, 0.3);
+  color: white;
+}
+
+.result-negative {
+  background: rgba(255, 0, 0, 0.3);
+  color: white;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  background: #00d4ff;
+  color: black;
+  font-size: 1.2rem;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #0088cc;
+  color: white;
+}
+
+/* JSON Request Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.popup h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.popup pre {
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  color: #00ff00;
+}
+
+.popup button {
+  margin-top: 10px;
+  padding: 10px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup button:hover {
+  background: darkred;
+}
